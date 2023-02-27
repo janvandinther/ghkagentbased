@@ -46,7 +46,7 @@ This model can be controlled with different input parameters. While there are de
 - **Number-of-batteries-per-station:** The number of batteries that each station can store and charge. \n
 - **average-trip:** Average trip length in patches; \n
 - **average-speed:** The average speed in patches per tick; \n
-- **average-num-trips:** TBA;
+- **average-num-trips:** The average number of trips per day per boda driver;
 - **Power specification** \n
     - **max-power-battery** the maximum charging power of a battery; \n
     - **num-lifecycles**; the maximum lifecycles of a battery\n
