@@ -37,33 +37,37 @@ The model includes various parameters that can be set to customize the simulatio
 the charging rates of the batteries, and the number of passengers available at each location.""")
 
     tab_2 = Tab('Input parameters')
-    tab_2.not_in_params_1 = Text("""### Input parameters:\n
+    tab_2.not_in_params_0 = Text("""## Input parameters:
+This model can be controlled with different input parameters. While there are default values for the inputs, the parameters can be tuned to your preferences.""")
+    
+    tab_2.not_in_params_1 = Text("""### Description:
 - **Num-drivers:** The total number of drivers in the simulation. \n
 - **Number-of-stations:** The total number of battery swapping stations \n
 - **Number-of-batteries-per-station:** The number of batteries that each station can store and charge. \n
-- **Threshold-dc:** The battery percentage where the drivers starts looking for a DC charging station.  \n
-- **num-of-dc:**  Number of DC charging spots in a station. \n
-- **perc-stations-dc** percentage of stations that have fast charging capability \n
 - **average-trip:** Average trip length in patches; \n
-    - **deviation-trip:** Deviation in patches per trip. \n
 - **average-speed:** The average speed in patches per tick; \n
-    - **deviation-speed:**  \n 
-- **average-num-trips:** TBA; \n
-    - **deviation-num-trips:** \n
+- **average-num-trips:** TBA;
 - **Power specification** \n
     - **max-power-battery** the maximum charging power of a battery; \n
     - **num-lifecycles**; the maximum lifecycles of a battery\n
     - **max-power-station** the maximum charging power a charging station can provide in total""")
 
     
-    tab_3 = Tab('Why this model is designed')
-    tab_3.not_in_params_3 = Text("""### Motivation: \n
-Models like these can be used to gain insights into complex systems and phenomena. By running the simulation with different input parameters and scenarios, researchers and policymakers 
-can explore "what if" scenarios and test various policies and interventions to see their potential impact on the system. 
-For example, they could explore the impact of building more charging stations or increasing the number of batteries per bodaboda driver on the overall utilization of the charging infrastructure. \n
-In addition, models like these can also help electricity companies plan for future infrastructure needs. By understanding the potential growth of electric vehicle usage and the corresponding 
-demand for charging, they can invest in the development of additional charging stations and other infrastructure to support the increasing demand for electricity. 
-    """)
+    tab_3 = Tab('Output')
+    tab_3.not_in_params_3 = Text("""### Output: \n
+The model provides output in a few different graphical reprisentations: \n
+- **A time indicator** - shows the amount of time that has passed \n
+- **Total Electricity Demand of Swapping Stations** \n
+    - **Green:** the total amount of electricity that has been charged \n
+    - **Orange:**  the amount of available solar energy\n
+- **The State of Charge (SOC)** of two different batteries **starting in a charging station**:\n
+    - This shows the state of charge of two random batteries a charging station; if one stays all the time at 100, it is never picked up.\n
+- **The State of Charge (SOC)** of two different batteries **starting in a Boda**:\n
+    - This shows the state of charge of two random batteries a random Boda; it shows when the batteries are swapped and how intesly they are used.
+""")
+
+
+
 class Controller(ViktorController):
     viktor_enforce_field_constraints = True  # prevents a warning and can be ignored for the purpose of this guide
 
@@ -71,7 +75,7 @@ class Controller(ViktorController):
     parametrization = Parametrization(width=30)
     @WebView('ABM Kampala', duration_guess=1)
     def get_web_view(self, params, **kwargs):
-        static_html_path = Path(__file__).parent / 'boda-boda-charging-new.html'
+        static_html_path = Path(__file__).parent / 'boda-boda-charging-ruben.html'
         return WebResult.from_path(static_html_path)
 
     
