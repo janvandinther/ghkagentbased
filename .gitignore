@@ -127,6 +127,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+workspace/ghkagentbased/venv/
 
 # Spyder project settings
 .spyderproject
