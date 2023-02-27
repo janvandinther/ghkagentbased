@@ -51,7 +51,7 @@ class Controller(ViktorController):
     parametrization = Parametrization
     @WebView('ABM Kampala', duration_guess=1)
     def get_web_view(self, params, **kwargs):
-        static_html_path = Path(__file__).parent / 'boda-boda-charging.html'
+        static_html_path = Path(__file__).parent / 'boda-boda-charging-new.html'
         return WebResult.from_path(static_html_path)
 
     
