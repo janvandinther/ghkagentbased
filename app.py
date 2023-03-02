@@ -24,7 +24,7 @@ If you are interested in collaborating on further development of this model or i
     
     tab_1 = Tab('Explanation')
     tab_1.not_in_params_2 = Text("""## Explanation
-The model shows boda-boda drivers moving through the city centre of Kampala. There houses are put on random locations, mainly on the outskirts of the city centre.\n
+The model shows boda-boda drivers moving through the city centre of Kampala. Their houses are located at random locations, mainly on the outskirts of the city centre.\n
 The drivers make a specific number of trips per day to random destinations on the map. After that number of trips, they go home and wait for the next day to start at 6 AM. \n
 When the driver notices that the battery is getting empty, it looks for nearest swapping station and swaps its battery for the battery in the station with the highest charge. \n
 """)
